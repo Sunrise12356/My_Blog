@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'md_css/monokai.css' %}">
+</head>
+<body>
+    {#  引入导航栏  #}
+    {% include 'header.html' %}
+    {#  预留具体页面位置  #}
+    {% block content %}{% endblock content %}
+    {#  引入注脚  #}
+    {% include 'footer.html' %}
+    {#  bootstrap.js 依赖 jquery.js 和 popper.js 在此处引入  #}
+    {#  <script src=""></script>  #}
+    <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.16.1/esm/popper-utils.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'layer/layer-master/src/layer.js' %}"></script>
+</body>
+</html>
